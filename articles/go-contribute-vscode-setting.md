@@ -34,7 +34,7 @@ $ git clone https://github.com/golang/go.git
 $ cd go/src
 $ ./all.bash
 ```
-go/bin以下にGoのバイナリが生成されます。
+`go/bin`以下にGoのバイナリが生成されます。
 
 # VS Codeで最新Goの開発環境を整える
 Goのrepositoryをvscodeで開きます。
@@ -43,7 +43,7 @@ $ cd go
 $ code .
 ```
 
-go/.vscode/settings.jsonを作成し、ソースからビルドしたGoを使用するように指定する。
+`go/.vscode/settings.json`を作成し、ソースからビルドしたGoを使用するように指定する。
 ```json
 {
 	"go.goroot": "Goのrepositoryの絶対path",
