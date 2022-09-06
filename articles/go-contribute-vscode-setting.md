@@ -4,6 +4,7 @@ emoji: "🐦"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["go","vscode"]
 published: true
+published_at: 2022-09-06 17:19
 ---
 VS Codeの設定は下記記事の最後の方に説明がありますが、swigのインストールなど書かれていなかったため補足記事として書かせていただきます。
 # CLA の同意とアカウント作成
