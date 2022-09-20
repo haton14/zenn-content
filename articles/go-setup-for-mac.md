@@ -45,6 +45,7 @@ $ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.19.1.linux-amd64.tar.gz
 # GOROOT, GOPATHはgoコマンド内部でしか使用しないので設定不要
 # go envで見るとシェルに設定しなくても、goコマンド内部で設定されていることが確認できる
 export PATH=$PATH:/usr/local/go/bin
+# go installを実行した際のGo製バイナリのインストール先
 export PATH=$PATH:$HOME/go/bin
 ```
 インストール確認
