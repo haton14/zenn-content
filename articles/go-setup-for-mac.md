@@ -36,9 +36,10 @@ $ vi ~/.zshrc
 
 # ローカルのMacにGoをインストール
 [Go公式のLinuxのインストール方法](https://go.dev/doc/install)と同じやり方で行います。
-ローカルにGoをインストール(go1.19.1の場合)
+ローカルにGoをインストール(go1.19.5の場合)
 ```bash
-$ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.19.1.linux-amd64.tar.gz
+$ wget https://go.dev/dl/go1.19.5.src.tar.gz
+$ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.19.5.linux-amd64.tar.gz
 ```
 `.zshrc`or`.bashrc`にPATHを通す。
 ```
@@ -51,7 +52,7 @@ export PATH=$PATH:$HOME/go/bin
 インストール確認
 ```
 $ go version
-go version go1.19.1 darwin/amd64
+go version go1.19.5 darwin/amd64
 ```
 
 # Goの複数バージョン管理(おまけ)
