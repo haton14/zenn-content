@@ -16,7 +16,7 @@ Homebrewは便利ですが、時々Goとは直接関係ないXcodeをアップ�
 # Homebrewの場合
 $ brew uninstall go
 ```
-GOROOT, GOPATHを環境変数として設定済みの場合は`.zshrc`or`.bashrc`から設定の記述を削除し、ディレクトリも削除します。
+GOROOT, GOPATHを環境変数として設定済みの場合は`.zshrc`or`.bashrc` or `.profile`から設定の記述を削除し、ディレクトリも削除します。
 ```
 # GOROOT設定されているか確認
 $ echo $GOROOT
@@ -36,12 +36,12 @@ $ vi ~/.zshrc
 
 # ローカルのMacにGoをインストール
 [Go公式のLinuxのインストール方法](https://go.dev/doc/install)と同じやり方で行います。
-ローカルにGoをインストール(go1.19.5の場合)
+ローカルにGoをインストール(go1.20の場合)
 ```bash
-$ wget https://go.dev/dl/go1.19.5.src.tar.gz
-$ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.19.5.linux-amd64.tar.gz
+$ wget https://go.dev/dl/go1.20.darwin-amd64.tar.gz
+$ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.linux-amd64.tar.gz
 ```
-`.zshrc`or`.bashrc`にPATHを通す。
+`.zshrc`or`.bashrc`or`.profile`にPATHを追記する。
 ```
 # GOROOT, GOPATHはgoコマンド内部でしか使用しないので設定不要
 # go envで見るとシェルに設定しなくても、goコマンド内部で設定されていることが確認できる
@@ -52,7 +52,7 @@ export PATH=$PATH:$HOME/go/bin
 インストール確認
 ```
 $ go version
-go version go1.19.5 darwin/amd64
+go version go1.20 darwin/amd64
 ```
 
 # Goの複数バージョン管理(おまけ)
