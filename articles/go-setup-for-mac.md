@@ -52,7 +52,7 @@ export PATH=$PATH:$HOME/go/bin
 インストール確認
 ```
 $ go version
-go version go1.20 darwin/amd64
+go version go1.20.1 darwin/amd64
 ```
 
 # Goの複数バージョン管理(おまけ)
