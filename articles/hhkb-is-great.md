@@ -2,8 +2,8 @@
 title: "HHKB買ってみました"
 emoji: "🐦"
 type: "idea" # tech: 技術記事 / idea: アイデア
-topics: []
-published: false
+topics: ["メモ"]
+published: true
 ---
 
 HHHKB Professional HYBRID Type-S(US配列)を買って良かったという、まとまりのない話です。
