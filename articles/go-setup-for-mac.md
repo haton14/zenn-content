@@ -44,7 +44,6 @@ $ vi ~/.zshrc
 
 [Go公式のLinuxのインストール方法](https://go.dev/doc/install)と同じやり方で行います。
 ローカルにGoをインストール(go1.20.5の場合)
-※ M1, M2の場合は`go1.20.5.darwin-arm64.pkg`をダウンロードしてください。
 
 ### intel Mac
 
