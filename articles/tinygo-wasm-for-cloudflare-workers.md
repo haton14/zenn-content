@@ -4,7 +4,7 @@ emoji: "🐦"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["go"]
 published: true
-published_at: 2023-07-09 13:00
+published_at: 2023-07-09 12:34
 ---
 知人に質問されたのでざっくり書く。
 
