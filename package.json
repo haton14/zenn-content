@@ -15,5 +15,9 @@
   "license": "ISC",
   "dependencies": {
     "zenn-cli": "^0.1.125"
+  },
+  "volta": {
+    "node": "20.4.0",
+    "npm": "9.8.0"
   }
 }
