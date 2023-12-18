@@ -3,7 +3,7 @@ title: "http clientとしてのリクエストの挙動を変えずに、I/F変�
 emoji: "🐦"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["go"]
-published: false
+published: true
 published_at: 2023-12-18 17:19
 ---
 プロダクト内でdao的なI/Fとして切り出されているGoのhttp clientがあり、以下のように中身は複雑に共通化され実際の挙動がどうなっているかわからないという状況はまれにあります。
