@@ -41,6 +41,7 @@ import (
   "net/url"
   "testing"
   "github.com/stretchr/testify/assert"
+  "myproduct/dao"
 )
 
 func TestHoge_Request(t *testing.T) {
@@ -63,7 +64,7 @@ func TestHoge_Request(t *testing.T) {
     fmt.Fprintln(w, `{"dummy": "dummy"}`)
   }))
   defer svr.Close()
-  resp, err := Hoge(`{"name":"hoge","secret":"cjadfmemflapd"}`)
+  resp, err := dao.Hoge(`{"name":"hoge","secret":"cjadfmemflapd"}`)
   assert.Nil(err)
   assert.NotNil(resp)
 }
