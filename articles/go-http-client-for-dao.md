@@ -23,8 +23,7 @@ func Hoge(paramater string) (*HogeResponse, error) {
 こういう時には呼び出し元からデバッグ実行を繰り返し実際のリクエスト内容を調査することが多いかと思いますが、メモしていなければ寝たら忘れてしまいます。
 このような辛い思いをすると、後のもの達の幸せを願い複雑に共通化されたdaoを紐解き、あるべきI/Fや共通処理剥がしをしようとする優しい方もいるかと思います。
 
-そんな方達のために、http clientの挙動を変えずにI/Fを変えるのに役立ちそうなテスト方法を紹介します。
-今回はあまり記事になっていることが多くなさそうなリクエストのみについて書きます。
+そんな方達のために、http clientの挙動を変えずにI/Fを変えるのに役立ちそうなテスト方法を紹介します。今回はあまり記事になっていることが多くなさそうなリクエストのみについて書きます。
 
 ## 結論
 
@@ -109,6 +108,6 @@ func Hoge(hoge dto.HogeRequest) (*HogeResponse, error) {
 
 ## まとめ
 
-- リクエストの挙動を変えずにGoのhttp clientのI/Fを変更する方法は、ダミーのhttpサーバーhttptest.NewServerを使って*http.Requestに詰めている値を直接比較する。
-- request内容の比較テストがPASSしていれば、http clientとしての挙動を変えずにdaoとしての処理やI/Fを変えることができます。
-- テストを作る過程は簡単で、まずhttp packageの中で*http.Requestの中身を確認し、それらのメモ内容をhttptest.NewServerに書き入れます。
+- httptest.NewServerを使って*http.Requestに詰めている値を直接比較する
+- テストを作る過程は簡単で、まずhttp packageの中で*http.Requestの中身を確認し、それらをhttptest.NewServerに書くだけ
+- request内容の比較テストがPASSしていれば、http clientとしての挙動を変えずにdaoとしての処理やI/Fを安全に変えることができる
