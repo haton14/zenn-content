@@ -43,27 +43,27 @@ $ vi ~/.zshrc
 ## ローカルのMacにGoをインストール
 
 [Go公式のLinuxのインストール方法](https://go.dev/doc/install)と同じやり方で行います。
-ローカルにGoをインストール(go1.22.2の場合)
+ローカルにGoをインストール(go1.22.3の場合)
 
 ### intel Mac
 
 ```bash
-wget https://go.dev/dl/go1.22.2.darwin-amd64.tar.gz
-sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.2.darwin-amd64.tar.gz
+wget https://go.dev/dl/go1.22.3.darwin-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.3.darwin-amd64.tar.gz
 ```
 
 ### M1, M2 Mac
 
 ```bash
-wget https://go.dev/dl/go1.22.2.darwin-arm64.tar.gz
-sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.2.darwin-arm64.tar.gz
+wget https://go.dev/dl/go1.22.3.darwin-arm64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.3.darwin-arm64.tar.gz
 ```
 
 ### Linux
 
 ```bash
-wget https://go.dev/dl/go1.22.2.linux-amd64.tar.gz
-sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.2.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.22.3.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.3.linux-amd64.tar.gz
 ```
 
 `.zshenv`or`.bashrc`or`.profile`にPATHを追記する。
@@ -86,7 +86,7 @@ export PATH=$PATH:$HOME/go/bin
 
 ```bash
 $ go version
-go version go1.22.2 darwin/amd64
+go version go1.22.3 darwin/amd64
 ```
 
 ## Goの複数バージョン管理(おまけ)
