@@ -64,3 +64,74 @@ loop内だよ
 true
 ```
 
+## iterパッケージの雰囲気を理解する
+
+iterパッケージにはイテレータを実装するのに便利な方が提供されています。
+
+```go
+type (
+	Seq[V any]     func(yield func(V) bool)
+	Seq2[K, V any] func(yield func(K, V) bool) // 本記事ではこっちは実装しません。
+)
+```
+
+range-over-funcで実装しらhoge()と比較するとyiled()の引数に値を渡せるようになってそうですね。
+この引数は`for v:=range hoge`と書くとき、vに入ってくる値になってきます。
+iterパッケージを利用する上で、理解するポイントとしては以下です。
+
+- yiledを呼び出すとforブロックの中に戻る。(大事なことなので)
+- yiled(v)の引数は`for v:=range hoge`でforブロックに渡す変数v
+- yiledの戻り値boolはforブロックが最後の行まで中断なく実行されたかの結果が入っている(大事なことなので)
+
+
+```go
+package main
+
+import (
+	"fmt"
+	"iter"
+)
+
+func main() {
+	// 1. forに渡したgetListValueを呼び出し
+	for i := range getListValue([]int{4, 2, 32, 44, 5}) {
+		// 5.yiled(v)で渡した変数vがiに代入され、標準出力される
+		fmt.Println(i)
+		if i == 44 {
+			// 7. forブロックが最後の行に到達せずに、途中で中断される
+			break
+		}
+	}
+}
+
+// 2. getListValue()を実行
+func getListValue(list []int) iter.Seq[int] {
+	return func(yield func(int) bool) {
+		// 3. listの中身を今までのfor分で中身を取り出し、変数vに代入
+		for _, v := range list {
+			// 4. vをforブロックに渡し、forブロックを実行
+			if !yield(v) {
+				// 8. forブロックが中断されたので、yiledはfalseを返す
+				return // 9. forブロックに渡している関数getListValueが終了するので、for文自体も抜ける
+			}
+			// 6. forブロックが最後まで実行されたので、yiledはtrueを返し、if文の中には入らずこの行まで実行される
+			// `for _, v := range list`に戻りforを実行
+		}
+	}
+}
+
+```
+
+出力結果
+
+```bash
+4
+2
+32
+44
+```
+
+## 終わりに
+
+yiledはforブロックの中身が入った関数と解釈するとことで、イテレータの挙動を理解した気になれる気がします。
+この記事は理解した気になるためのとっかかりになることを目的としているので、他の詳しいイテレータの記事を読んだりして正しく理解を深めてください。
