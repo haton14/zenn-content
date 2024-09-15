@@ -3,8 +3,8 @@ title: "Goのイテレータの挙動をなんとかして理解する"
 emoji: "🐦"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["go"]
-published: false
-published_at: 2024-09-15 17:19
+published: true
+published_at: 2024-09-15 23:55
 ---
 
 ## はじめに
