@@ -30,30 +30,30 @@ import (
 )
 
 func main() {
-    // 1. forに渡したhoge()を呼び出し
+	// 1. forに渡したhoge()を呼び出し
 	for range hoge {
-        // 4. yiledの呼び出しによりforブロック内が実行される
+		// 4. yiledの呼び出しによりforブロック内が実行される
 		fmt.Println("loop内だよ")
 	}
 }
 
 // 2. hoge()を実行
 func hoge(yield func() bool) {
-    fmt.Println("hoge内だよ")
-    // 3. forブロックに戻ってloopを一回実行するためのyiled()が呼び出される
-    forResult := yield()
-    // 5. yield()の戻り値boolはforブロックが最後の行に中断なく実行されればtrueで帰ってくる
-    // forブロックにはbreakなど中断する処理がないので、forResultにtrueが入ってくる
-    fmt.Println(forResult)
+	fmt.Println("hoge内だよ")
+	// 3. forブロックに戻ってloopを一回実行するためのyiled()が呼び出される
+	forResult := yield()
+	// 5. yield()の戻り値boolはforブロックが最後の行に中断なく実行されればtrueで帰ってくる
+	// forブロックにはbreakなど中断する処理がないので、forResultにtrueが入ってくる
+	fmt.Println(forResult)
 }
 ```
 
 理解するポイントとしては以下です。
 - for文に関数hogeを渡している。
-- 渡した関数hogeの中でyiledを呼び出すとforブロックに戻る。
+- 渡した関数hogeの中でyiledを呼び出すとforブロックの中に戻る。
     - yiledはforブロックの中身が入った関数と思ってもいいかもしれないです。
 - forブロックが中断なく最後の行まで実行されると、yiledがtrueを返した上で、関数hogeのyiled呼び出し箇所へ戻る。
-- 関数hogeが最後まで実行されるとfor文も抜ける。
+- 関数hogeが最後の行まで実行されるとfor文も抜ける。
 
 出力結果
 
