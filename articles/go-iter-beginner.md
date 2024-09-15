@@ -51,7 +51,7 @@ func hoge(yield func() bool) {
     forResult := yield()
     // 5. yield()の戻り値boolはforブロックが最後の行に中断なく実行されればtrueで帰ってくる
     // forブロックにはbreakなど中断する処理がないので、forResultにtrueが入ってくる
-	fmt.Println(forResult)
+    fmt.Println(forResult)
 }
 ```
 
