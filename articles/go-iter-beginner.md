@@ -46,7 +46,7 @@ func main() {
 
 // 2. hoge()を実行
 func hoge(yield func() bool) {
-	fmt.Println("hoge内だよ")
+    fmt.Println("hoge内だよ")
     // 3. forブロックに戻ってloopを一回実行するためのyiled()が呼び出される
     forResult := yield()
     // 5. yield()の戻り値boolはforブロックが最後の行に中断なく実行されればtrueで帰ってくる
