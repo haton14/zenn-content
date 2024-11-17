@@ -10,6 +10,8 @@ Homebrewは便利ですが、時々Goとは直接関係ないXcodeをアップ�
 10分もあれば`Hello World!`が何回も書けますね。。
 そんな時間が勿体ないと感じる方向けにGo公式のArchiveからローカルにインストールする方法を紹介します。
 
+[Goをすでに直接入れている方はこの部分をコピペすれば最新になります](https://zenn.dev/haton14/articles/go-setup-for-mac#%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E3%81%AEmac%E3%81%ABgo%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)
+
 ## ローカルのMacにGoをインストール済みの場合
 
 全て消してください。
@@ -43,29 +45,29 @@ $ vi ~/.zshrc
 ## ローカルのMacにGoをインストール
 
 [Go公式のLinuxのインストール方法](https://go.dev/doc/install)と同じやり方で行います。
-ローカルにGoをインストール(go1.23.2の場合)
+ローカルにGoをインストール(go1.23.3の場合)
 
 すでにこの記事を最後まで実行し、Goのバージョン更新だけしたい方はこの部分だけ実行でOKです。
 
 ### intel Mac
 
 ```bash
-wget https://go.dev/dl/go1.23.2.darwin-amd64.tar.gz
-sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.2.darwin-amd64.tar.gz
+wget https://go.dev/dl/go1.23.3.darwin-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.3.darwin-amd64.tar.gz
 ```
 
 ### M1, M2 Mac
 
 ```bash
-wget https://go.dev/dl/go1.23.2.darwin-arm64.tar.gz
-sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.2.darwin-arm64.tar.gz
+wget https://go.dev/dl/go1.23.3.darwin-arm64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.3.darwin-arm64.tar.gz
 ```
 
 ### Linux
 
 ```bash
-wget https://go.dev/dl/go1.23.2.linux-amd64.tar.gz
-sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.2.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.23.3.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.3.linux-amd64.tar.gz
 ```
 
 `.zshenv`or`.bashrc`or`.profile`にPATHを追記する。
@@ -88,7 +90,7 @@ export PATH=$PATH:$HOME/go/bin
 
 ```bash
 $ go version
-go version go1.23.2 darwin/amd64
+go version go1.23.3 darwin/amd64
 ```
 
 ## Goの複数バージョン管理(おまけ)
